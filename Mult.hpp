@@ -1,5 +1,5 @@
 
- once
+#pragma once
 #include "base.hpp"
 
 class Mult : public Base {
