@@ -14,8 +14,6 @@ int main(int argc, char** argv) {
 	Base* result = Fact().parse(argv, argc);	
 	if(result){
 
-		cout << result->stringify() << endl;
-	
 		cout << result->stringify() << " = " << result->evaluate() << endl;
 
 	}
