@@ -47,22 +47,24 @@ Base* Fact::parse(char** input, int length){
 
                 }
 
-		else if((string)input[i] == " "){}		
+	//	else if((string)input[i] == " "){}		
 		
 
 		else{
 	
-			cout << "ERROR!" << input[i] << "Unrecognized!" << endl;
+			cout << "ERROR!" << endl;
+		//	cout << "ERROR!" << input[i] << "Unrecognized!" << endl;
 			return nullptr;		
 		}
 		
-	     	if(!is_Op((string)input[i]) && (string)input[i] != " "){ 
+	     	if(!is_Op((string)input[i])){ 
 		
 			delete cont.top();
 			cont.pop();
 		}
 
-		if((string)input[i] != " ") cont.push(root);
+		//if((string)input[i] != " ") 
+		cont.push(root);
 	
 
 	}
