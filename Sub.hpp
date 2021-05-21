@@ -24,6 +24,10 @@ using namespace std;
                                 return "(" + lhs->stringify() + "-" + rhs->stringify() + ")";
                         }
 
+			~Sub(){
+				delete lhs;
+				delete rhs;
+			}
 
                 private:
 

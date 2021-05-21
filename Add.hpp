@@ -15,7 +15,11 @@ using namespace std;
                                 rhs = y;
 
                         }
+			~Add(){
 
+				delete lhs;
+				delete rhs;
+			}
 
                         double evaluate() {
                                 return lhs->evaluate()+rhs->evaluate();

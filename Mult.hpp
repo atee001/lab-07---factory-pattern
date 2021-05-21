@@ -1,5 +1,5 @@
 
- once
+#pragma once
 #include "base.hpp"
 
 class Mult : public Base {
@@ -11,6 +11,11 @@ class Mult : public Base {
       this->lhs = lhs;
       this->rhs = rhs;
 
+    }
+	
+    ~Mult(){
+	delete lhs;
+	delete rhs;
     }
 
     double evaluate(){
