@@ -12,6 +12,11 @@ class Mult : public Base {
       this->rhs = rhs;
 
     }
+	
+    ~Mult(){
+	delete lhs;
+	delete rhs;
+    }
 
     double evaluate(){
 

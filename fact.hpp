@@ -23,11 +23,12 @@ class Fact{
 
 		Base* parse(char** input, int length);
 
-		bool is_validDouble(const string&);
+		bool is_Op(const string&);  //checking if argument is an operand
 
-		void displayStack(stack<Base*>);
+		void displayStack(stack<Base*>); //for testing
 
 
+	
 
 
 

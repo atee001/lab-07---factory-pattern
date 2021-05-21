@@ -15,7 +15,13 @@ using namespace std;
 				rhs = y;
 
 			}
+			
+			~Pow(){
 
+				delete lhs;
+				delete rhs;
+
+			}
 
 			double evaluate() {
 				double r = 0.0;

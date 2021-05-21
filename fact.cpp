@@ -11,7 +11,7 @@ Base* Fact::parse(char** input, int length){
 		
 		//cout << "This is fine: " << input[i] << endl;
 
-		if(is_validDouble((string)input[i])){
+		if(is_Op((string)input[i])){
 		
 			root = new Op(stod(input[i]));
 		
@@ -56,7 +56,7 @@ Base* Fact::parse(char** input, int length){
 			return nullptr;		
 		}
 		
-		if(!is_validDouble((string)input[i]) && (string)input[i] != " "){ 
+	     	if(!is_Op((string)input[i]) && (string)input[i] != " "){ 
 		
 			delete cont.top();
 			cont.pop();
@@ -84,7 +84,7 @@ void Fact::displayStack(stack<Base*> cont){
 
 }
 
-bool Fact::is_validDouble(const string& c){
+bool Fact::is_Op(const string& c){
     
     stringstream ss;    
     
