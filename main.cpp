@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
 		cout << result->stringify() << endl;
 	
-		cout << "Answer: " << result->evaluate() << endl;
+		cout << result->stringify() << " = " << result->evaluate() << endl;
 
 	}
 
