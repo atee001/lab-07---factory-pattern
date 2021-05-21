@@ -1,10 +1,26 @@
 #include <iostream>
+#include "Add.hpp"
+#include "Sub.hpp"
+#include "Pow.hpp"
+#include "Mult.hpp"
+#include "Div.hpp"
+#include "Rand.hpp"
+#include "base.hpp"
+#include "op.hpp"
 #include "fact.hpp"
-using namespace std;
 
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
+       
+	Base* result = Fact().parse(argv, argc);	
+	if(result){
 
+		cout << result->stringify() << endl;
+	
+		cout << "Answer: " << result->evaluate() << endl;
 
+	}
 
-  return 0;
+	delete result;	
+
+	return 0;
 }
