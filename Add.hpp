@@ -9,7 +9,7 @@ using namespace std;
 
         class Add: public Base {
                 public:
-                        Add(Base* const x, Base* const y) {
+                        Add(Base* x, Base* y) : Base(){
 
                                 lhs = x;
                                 rhs = y;

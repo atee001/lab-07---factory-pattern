@@ -20,6 +20,13 @@ class Div : public Base {
       return lhs->evaluate()/rhs->evaluate();
 
     }
+   
+    ~Div(){
+
+	delete rhs;
+	delete lhs;
+
+	}
 
     string stringify(){
 

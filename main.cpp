@@ -10,12 +10,12 @@
 #include "fact.hpp"
 
 int main(int argc, char** argv) {
-       
-	Base* result = Fact().parse(argv, argc);	
+        Fact f; 
+	Base* result = f.parse(argv, argc);	
 	if(result){
 
 		cout << result->stringify() << " = " << result->evaluate() << endl;
-
+		
 	}
 
 	delete result;	
