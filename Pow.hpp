@@ -9,7 +9,7 @@ using namespace std;
 
 	class Pow: public Base {
 		public:
-			Pow(Base* const x, Base* const y) {
+			Pow(Base* x, Base* y): Base() {
 
 				lhs = x;
 				rhs = y;
@@ -24,16 +24,9 @@ using namespace std;
 			}
 
 			double evaluate() {
-				double r = 0.0;
-				double l = 0.0;
+				
 
-				r = rhs->evaluate();
-				l = lhs->evaluate(); 
-
-				double val = 0.0;
-				val = pow(l, r);
-
-				return val;
+				return pow(lhs->evaluate(), rhs->evaluate());
 			}
 
 			string stringify() {

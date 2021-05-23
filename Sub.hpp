@@ -8,7 +8,7 @@ using namespace std;
 
         class Sub: public Base {
                 public:
-                        Sub(Base* const x, Base* const y) {
+                        Sub(Base* x, Base* y) : Base() {
 
                                 lhs = x;
                                 rhs = y;

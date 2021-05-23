@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "gtest/gtest.h"
-#include "../fact.cpp"
+#include "../fact.hpp"
 
 TEST(FactNegTest, Add_Eval) {
         char* str[4];

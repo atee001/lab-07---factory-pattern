@@ -2,7 +2,7 @@
 #pragma once
 
 #include "gtest/gtest.h"
-#include "../fact.cpp"
+#include "../fact.hpp"
 #include <cmath>
 
 TEST(FactDoubleTest, Add_Eval) {
