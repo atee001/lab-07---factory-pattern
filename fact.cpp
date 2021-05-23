@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #include "fact.hpp"
 
 Base* Fact::parse(char** input, int length){
@@ -58,22 +58,26 @@ Base* Fact::parse(char** input, int length){
 			return nullptr;		
 		}
 		
-	     	if(!is_Op((string)input[i])){ 
+	     	//if(!is_Op((string)input[i])){ 
 		
-			delete cont.top();
-			cont.pop();
-		}
+		//	delete cont.top();
+		//	cont.pop();
+		//}
 
-		//if((string)input[i] != " ") 
+//		while(!cont.empty()){
+//
+//			delete cont.top();
+//			cont.pop();
+//		}
 		cont.push(root);
 	
 
 	}
 	
-
-	return cont.top();
+		
+//cout << "Testing" << endl;	
+	return root;
 }
-
 
 void Fact::displayStack(stack<Base*> cont){
 
