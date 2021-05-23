@@ -88,14 +88,14 @@ TEST(FactDoubleTest, All_Eval) {
 	str[4] = "-";
 	str[5] = "1.1";
 	str[6] = "*";
-	str[7] = "4.4";
+	str[7] = "4.0";
 	str[8] = "**";
-	str[9] = "2.1";
+	str[9] = "2.0";
 
 	Base* temp = Fact().parse(str, 10);
 	
 
-	EXPECT_EQ(temp->evaluate(), pow(19.36, 2.1));
+	EXPECT_EQ(temp->evaluate(), pow(17.6, 2.0));
 	delete temp;
 }
 
