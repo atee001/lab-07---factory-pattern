@@ -78,13 +78,23 @@ TEST(FactDoubleTest, Pow_Eval) {
 }
 
 TEST(FactDoubleTest, All_Eval) {
-	char* str[];
+	char* str[10];
 
-	
-	Base* temp = Fact().parse(str, );
+	str[0] = "./calculator";
+	str[1] = "3.3";
+	str[2] = "+";
+	str[3] = "2.2";
+	str[4] = "-";
+	str[5] = "1.1";
+	str[6] = "*";
+	str[7] = "4.4";
+	str[8] = "**";
+	str[9] = "2";
 
+	Base* temp = Fact().parse(str, 10);
 	
-	EXPECT_EQ(temp->evaluate(), );
+
+	EXPECT_EQ(temp->evaluate(), 374.81);
 	delete temp;
 }
 
@@ -99,7 +109,7 @@ TEST(FactDoubleTest, Add_Str) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->stringfy(), "(54.245+3.213)");
+        EXPECT_EQ(temp->stringify(), "(54.245+3.213)");
         delete temp;
 }
 
@@ -113,7 +123,7 @@ TEST(FactDoubleTest, Sub_Str) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->stringfy(), "(54.245-3.213)");
+        EXPECT_EQ(temp->stringify(), "(54.245-3.213)");
         delete temp;
 }
 
@@ -128,9 +138,10 @@ TEST(FactDoubleTest, Mult_Str) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->stringfy(), "(3.2*5.1)");
+        EXPECT_EQ(temp->stringify(), "(3.2*5.1)");
         delete temp;
 }
+
 TEST(FactDoubleTest, Div_Str) {
         char* str[4];
         str[0] = "./calculator";
@@ -141,7 +152,7 @@ TEST(FactDoubleTest, Div_Str) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->stringfy(), "(5.5/1.1)");
+        EXPECT_EQ(temp->stringify(), "(5.5/1.1)");
         delete temp;
 }
 
@@ -156,18 +167,29 @@ TEST(FactDoubleTest, Pow_Str) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->stringfy(), "(3.3**2)");
+        EXPECT_EQ(temp->stringify(), "(3.3**2)");
         delete temp;
 }
 
+
 TEST(FactDoubleTest, All_Str) {
-        char* str[];
+        char* str[10];
+
+        str[0] = "./calculator";
+        str[1] = "3.3";
+        str[2] = "+";
+        str[3] = "2.2";
+        str[4] = "-";
+        str[5] = "1.1";
+        str[6] = "*";
+        str[7] = "4.4";
+        str[8] = "**";
+        str[9] = "2";
+
+        Base* temp = Fact().parse(str, 10);
 
 
-        Base* temp = Fact().parse(str, );
-
-
-        EXPECT_EQ(temp->stringfy(), );
+        EXPECT_EQ(temp->stringify(), "((((3.3+2.2)-1.1)*4.4)**2)");
         delete temp;
 }
 
