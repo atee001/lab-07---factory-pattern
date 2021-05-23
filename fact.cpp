@@ -1,3 +1,4 @@
+#pragma once
 #include "fact.hpp"
 
 Base* Fact::parse(char** input, int length){
