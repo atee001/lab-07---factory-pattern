@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "../fact.cpp"
+#include <cmath>
 
 TEST(FactDoubleTest, Add_Eval) {
         char* str[4];
@@ -68,12 +69,12 @@ TEST(FactDoubleTest, Pow_Eval) {
         str[0] = "./calculator";
         str[1] = "3.3";
         str[2] = "**";
-        str[3] = "2";
+        str[3] = "2.1";
 
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->evaluate(), 10.89);
+        EXPECT_EQ(temp->evaluate(), pow(3.3, 2.1));
 	delete temp;
 }
 
@@ -89,12 +90,12 @@ TEST(FactDoubleTest, All_Eval) {
 	str[6] = "*";
 	str[7] = "4.4";
 	str[8] = "**";
-	str[9] = "2";
+	str[9] = "2.1";
 
 	Base* temp = Fact().parse(str, 10);
 	
 
-	EXPECT_EQ(temp->evaluate(), 374.81);
+	EXPECT_EQ(temp->evaluate(), pow(19.36, 2.1));
 	delete temp;
 }
 
