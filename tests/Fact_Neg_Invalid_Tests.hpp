@@ -196,16 +196,16 @@ TEST(FactNegTest, All_Str) {
         delete temp;
 }
 
-//TEST(FactInvTest, EvalCompChar) {
-//	char* str[4];
+TEST(FactInvTest, EvalCompChar) {
+	char* str[4];
 	
-//	str[0] = "./calculator";
-//	str[1] = "1.0";
-//	str[2] = "+";
-//	str[3] = "n";
+	str[0] = "./calculator";
+	str[1] = "1.0";
+	str[2] = "+";
+	str[3] = "n";
 
-//	Base* temp = Fact().parse(str, 4);
+	Base* temp = Fact().parse(str, 4);
 
-//	EXPECT_EQ(temp->evaluate(), nullptr);
-//	delete temp;
-//}
+	EXPECT_EQ(temp, nullptr);
+	delete temp;
+}

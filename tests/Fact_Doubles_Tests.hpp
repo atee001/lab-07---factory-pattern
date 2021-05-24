@@ -16,7 +16,7 @@ TEST(FactDoubleTest, Add_Eval) {
         Base* temp = Fact().parse(str, 4);
 
 
-        EXPECT_EQ(temp->evaluate(), 57.458);
+        EXPECT_EQ(temp->evaluate(), 57.458);	
 	delete temp;
 }
 
@@ -75,8 +75,9 @@ TEST(FactDoubleTest, Pow_Eval) {
 
 
         EXPECT_EQ(temp->evaluate(), pow(3.3, 2.1));
-	delete temp;
-}
+	delete temp;       
+}        
+
 
 TEST(FactDoubleTest, All_Eval) {
 	char* str[10];
