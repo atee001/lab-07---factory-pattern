@@ -189,11 +189,23 @@ TEST(FactNegTest, All_Str) {
 	str[10] = "**";
 	str[11] = "2";        
                                                
-      Base* temp = Fact().parse(str, 12);
+        Base* temp = Fact().parse(str, 12);
 
 
         EXPECT_EQ(temp->stringify(), "(((((3.3+2.2)-1.1)*4.4)/2.2)**2)");
         delete temp;
 }
 
+TEST(FactInvTest, EvalCompChar) {
+	char* str[4];
+	
+	str[0] = "./calculator";
+	str[1] = "1.0";
+	str[2] = "+";
+	str[3] = "n";
 
+	Base* temp = Fact().parse(str, 4);
+
+	EXPECT_EQ(temp, nullptr);
+	delete temp;
+}
