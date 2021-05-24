@@ -13,36 +13,36 @@ Base* Fact::parse(char** input, int length){
 		//cout << "This is fine: " << input[i] << endl;
 
 		if(is_Op((string)input[i])){
-		
-			root = new Op(stod(input[i]));
+			//cout << "input: " << (string)input[i] << endl;	
+			root = new Op(stod((string)input[i]));
 		
 
 		}
 
-		else if((string)input[i] == "+"){
-		
-			root = new Add(cont.top(), new Op(stod(input[++i])));	
+		else if((string)input[i] == "+" && is_Op((string)input[i+1])){
+			//cout << "input: " << (string)input[i] << endl;	
+			root = new Add(cont.top(), new Op(stod((string)input[++i])));	
 		}
 	
-		else if((string)input[i] == "*"){
+		else if((string)input[i] == "*" && is_Op((string)input[i+1])){
 
 			root = new Mult(cont.top(), new Op(stod(input[++i])));
 
 		}
 		
-		else if((string)input[i] == "**"){
+		else if((string)input[i] == "**" && is_Op((string)input[i+1])){
 
                         root = new Pow(cont.top(), new Op(stod(input[++i])));
 
                 }
 
-		else if((string)input[i] == "/"){
+		else if((string)input[i] == "/" && is_Op((string)input[i+1])){
 
                         root = new Div(cont.top(), new Op(stod(input[++i])));
 
                 }
 
-		else if((string)input[i] == "-"){
+		else if((string)input[i] == "-" && is_Op((string)input[i+1])){
 
                         root = new Sub(cont.top(), new Op(stod(input[++i])));
 
@@ -55,8 +55,10 @@ Base* Fact::parse(char** input, int length){
 	
 			cout << "ERROR!" << endl;
 		//	cout << "ERROR!" << input[i] << "Unrecognized!" << endl;
+			delete root;
 			return nullptr;		
-		}
+				
+	}
 		
 	     	//if(!is_Op((string)input[i])){ 
 		
